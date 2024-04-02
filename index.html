@@ -202,7 +202,7 @@
 
             .navbar-links a {
                 margin: 10px 0; /* Adjust spacing between links */
-                color: white;
+                color:white;
                 text-decoration: none;
             }
 
@@ -274,6 +274,7 @@
         padding: 20px;
         text-align: center;
     }
+  
     </style>
 </head>
 
@@ -297,17 +298,16 @@
         <div class="hero-content">
             <h1 class="hero-name"></h1>
             <div class="header">
-                <h1 style="text-align: center; font-size: 36px;">Hello, I'm Angel Belangel</h1>
+                <h1 style="text-align: center; margin-bottom: 70px; font-size: 46px;">Hello, I'm Angel Belangel</h1>
                 <div class="typing-animation"></div>
             </div>
             <p class="hero-description"></p>
             <p>Don't hesitate to reach out to me</p>
             <a href="https://www.facebook.com/angelbelangel24" class="social-icons" target="_blank"><i
                     class="fab fa-facebook"></i></a>
-            <a href="#" class="social-icons" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/angelbelangel01" class="social-icons" target="_blank"><i
                     class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icons" target="_blank"><i class="fab fa-twitter"></i></a>
+           
         </div>
         <img class="profile-image" src="./images/angel3.png " class="profile-image">
     </header>
@@ -415,21 +415,35 @@
     <script>
         const phrases = ["Aspiring Web Developer", "Backend Developer", " Mobile Developer"];
         let index = 0;
-
         function typePhrases() {
-            const phraseElement = document.querySelector('.typing-animation');
-            const currentPhrase = phrases[index];
-            const interval = 150;
-            let i = 0;
-            const typingInterval = setInterval(() => {
-                if (i <= currentPhrase.length) {
-                    phraseElement.textContent = currentPhrase.substring(0, i++);
-                } else {
-                    clearInterval(typingInterval);
-                    setTimeout(erasePhrase, 1500);
-                }
-            }, interval);
+    const phraseElement = document.querySelector('.typing-animation');
+    const currentPhrase = phrases[index];
+    const interval = 150;
+    let i = 0;
+    const typingInterval = setInterval(() => {
+        if (i <= currentPhrase.length) {
+            phraseElement.textContent = currentPhrase.substring(0, i++);
+        } else {
+            clearInterval(typingInterval);
+            setTimeout(erasePhrase, 1500);
         }
+    }, interval);
+    
+    // Adjust styles for different screen sizes
+    phraseElement.style.fontSize = "30px"; // Set font size
+    phraseElement.style.color = "rgb(215, 38, 11)"; // Set text color
+    phraseElement.style.position = "relative"; // Set position to relative
+    
+    // Responsive adjustments
+    phraseElement.style.left = "50%"; // Center horizontally
+    phraseElement.style.transform = "translateX(-50%)"; // Center horizontally
+
+    // Media query for smaller screens
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        phraseElement.style.fontSize = "20px"; // Adjust font size for smaller screens
+    }
+}
+
 
         function erasePhrase() {
             const phraseElement = document.querySelector('.typing-animation');
