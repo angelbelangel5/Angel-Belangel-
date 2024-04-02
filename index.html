@@ -62,8 +62,8 @@
         }
 
         .profile-image {
-            max-width: 100%; /* Make the image responsive */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 50%;
+            height: auto;
             border-radius: 5%;
         }
 
@@ -89,18 +89,20 @@
         /* About */
         .about {
             background: linear-gradient(#060505, #060505);
-            padding: 50px 5%; /* Add padding on the sides */
+            padding: 50px 5%;
             text-align: center;
         }
 
         .about-content {
-            max-width: 800px;
-            margin: 0 auto; /* Center the content */
-            text-align: left; /* Align the content to the left */
+            max-width: 100%;
+            margin: 0 auto; 
+            text-align: left; 
+            font-size: 1.5em;
         }
 
         .abouttitle {
             text-align: center;
+            margin-bottom: 2em;
         }
 
         .contact-info p {
@@ -123,17 +125,17 @@
         }
 
         .project-item {
-            width: calc(30% - 20px); /* Adjust width for responsive layout */
+            width: calc(30% - 20px);
             margin-bottom: 30px;
             background-color: white;
             border-radius: 10px;
             padding: 10px;
-            position: relative; /* Position the button relative to the project item */
+            position: relative; 
         }
 
         .projectimg {
-            max-width: 100%; /* Make the image responsive */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 100%;
+            height: auto; 
         }
 
         .project-button {
@@ -169,7 +171,7 @@
         }
 
         .skill-item img {
-            max-width: 100%;
+            max-width: 60%;
             height: auto;
             border-radius: 10px;
         }
@@ -246,7 +248,7 @@
             .skills {
                 background-color: #060505;
                 color: white;
-                padding: 50px 0;
+                padding: 30px 0;
                 text-align: center;
             }
 
@@ -255,6 +257,7 @@
                 justify-content: space-around;
                 flex-wrap: wrap;
                 margin-top: 30px;
+                
             }
 
             .skill-item {
@@ -306,8 +309,18 @@
                     class="fab fa-linkedin"></i></a>
             <a href="#" class="social-icons" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
-        <img src="./images/angel3.png" class="profile-image">
+        <img class="profile-image" src="./images/angel3.png " class="profile-image">
     </header>
+
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="abouttitle">About Me</h2>
+            <p>
+                I am passionate about developing solutions to help improve people's lives. I am interested in both frontend and backend development, but I am particularly keen on focusing on backend development.
+            </p>
+        </div>
+    </section>
 <section id="projects" class="project">
         <h2>Projects</h2>
         <div class="project-container">
@@ -335,15 +348,7 @@
             </div>
         </div>
     </section>
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2 class="abouttitle">About Me</h2>
-            <p>
-                I am passionate about developing solutions to help improve people's lives. I am interested in both frontend and backend development, but I am particularly keen on focusing on backend development.
-            </p>
-        </div>
-    </section>
-    
+   
 
 <section id="skills" class="skills">
     <h2>Skills</h2>
