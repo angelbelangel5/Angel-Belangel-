@@ -62,10 +62,11 @@
         }
 
         .profile-image {
-    max-width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5%;
-}
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5%;
+        }
+
         /* Media query for smaller screens */
         @media screen and (max-width: 600px) {
             .hero {
@@ -88,14 +89,22 @@
         /* About */
         .about {
             background: linear-gradient(#060505, #060505);
-            padding: 50px;
+            padding: 50px 5%; /* Add padding on the sides */
             text-align: center;
-
         }
 
         .about-content {
             max-width: 800px;
+            margin: 0 auto; /* Center the content */
+            text-align: left; /* Align the content to the left */
+        }
 
+        .abouttitle {
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 14px;
         }
 
         /* Projects */
@@ -114,59 +123,57 @@
         }
 
         .project-item {
-    width: calc(30% - 20px); /* Adjust width for responsive layout */
-    margin-bottom: 30px;
-    background-color: white;
-    border-radius: 10px;
-    padding: 10px;
-    position: relative; /* Position the button relative to the project item */
-}
-        .projectimg {
-    max-width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-}
-
-
-.project-button {
-    position: absolute;
-    bottom: 10px; /* Adjust button position */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px; /* Set button width */
-    margin: 0 auto;
-}
-        /* Contact */
-        .contact {
-            background-color: #060505;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+            width: calc(30% - 20px); /* Adjust width for responsive layout */
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            position: relative; /* Position the button relative to the project item */
         }
 
-        .contact-info {
-            max-width: 500px;
+        .projectimg {
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .project-button {
+            position: absolute;
+            bottom: 10px; /* Adjust button position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px; /* Set button width */
             margin: 0 auto;
         }
 
-        .contact-info p {
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        .footer {
+        /* Skills */
+        .skills {
             background-color: #060505;
             color: white;
-            padding: 20px;
+            padding: 50px 0;
             text-align: center;
         }
 
-        .social-icons {
-            font-size: 24px;
-            margin: 0 10px;
-            color: white;
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
-        /* Responsive Styles */
+        .skill-item {
+            width: calc(30% - 20px); /* Adjust width for responsive layout */
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .skill-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
         @media screen and (max-width: 600px) {
             .navbar {
                 justify-content: space-between;
@@ -175,93 +182,95 @@
             .navbar-links {
                 display: none;
                 flex-direction: column;
-                align-items: flex-end;
-                position: absolute;
-                top: 70px;
-                right: 20px;
+                align-items: center; /* Center the links vertically */
+                justify-content: center; /* Center the links horizontally */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
                 background-color: #060505;
-                padding: 10px;
-                border-radius: 5px;
+                padding-top: 70px; /* Adjust top padding to avoid overlap with the navbar */
+                z-index: 1; /* Ensure the menu is on top of other content */
+            }
+
+            .navbar-links.show {
+                display: flex;
             }
 
             .navbar-links a {
-                margin: 5px 0;
+                margin: 10px 0; /* Adjust spacing between links */
+                color: white;
+                text-decoration: none;
             }
 
             .hamburger-menu {
                 display: block;
-            }
-        }
-
-        /* CSS for typing animation */
-        /* CSS for typing animation */
-        @keyframes typing {
-            from {
-                width: 0
+                position: scroll;
+                top: 20px; /* Adjust vertical position */
+                right: 20px; /* Adjust horizontal position */
+                z-index: 2; /* Ensure the menu icon is on top of other content */
             }
 
-            to {
-                width: 100%
-            }
-        }
-
-        .typing-animation {
-            overflow: hidden;
-            white-space: nowrap;
-            margin: 0 auto;
-            font-size: 24px;
-            position: relative;
-        }
-        .typing-animation::after {
-            content: "|";
-            position: absolute;
-            animation: blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes blink-caret {
-
-            from,
-            to {
-                opacity: 0;
+            .project-item {
+                width: 100%; /* Adjust width for smaller screens */
             }
 
-            50% {
-                opacity: 1;
+            .projectimg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* About */
+            .about {
+                background: linear-gradient(#060505, #060505);
+                padding: 50px 5%; /* Add padding on the sides */
+                text-align: center;
+            }
+
+            .about-content {
+                max-width: 800px;
+                margin: 0 auto; /* Center the content */
+                text-align: left; /* Align the content to the left */
+            }
+
+            .abouttitle {
+                text-align: center;
+            }
+
+            .contact-info p {
+                font-size: 14px;
+            }
+
+            /* Skills */
+            .skills {
+                background-color: #060505;
+                color: white;
+                padding: 50px 0;
+                text-align: center;
+            }
+
+            .skills-container {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+
+            .skill-item {
+                width: calc(100% - 20px); /* Adjust width for responsive layout */
+                margin-bottom: 30px;
+                background-color: white;
+                border-radius: 10px;
+                padding: 10px;
             }
         }
-@media screen and (max-width: 600px) {
-    .navbar {
-        padding: 10px;
-    }
-    
-    .navbar a {
-        margin-right: 10px;
-        font-size: 14px;
-    }
-
-    .logo {
-        margin-left: 10px;
-        font-size: 20px;
-    }
-
-    .project-item {
-        width: 100%; /* Adjust width for smaller screens */
-    }
-
-    .projectimg {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .about-content {
+.footer {
+        background-color: #060505;
+        color: white;
         padding: 20px;
+        text-align: center;
     }
-
-    .contact-info p {
-        font-size: 14px;
-    }
-}
-
     </style>
 </head>
 
@@ -274,21 +283,19 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </div>
         <div class="hamburger-menu" onclick="toggleNavbar()">
             <i class="fas fa-bars"></i>
         </div>
     </div>
-
     <header id="home" class="hero">
-
         <div class="hero-content">
             <h1 class="hero-name"></h1>
             <div class="header">
-                <h1 style="text-align: center; font-size: 36px;">Hello ,Im Angel Belangel</h1>
+                <h1 style="text-align: center; font-size: 36px;">Hello, I'm Angel Belangel</h1>
                 <div class="typing-animation"></div>
-
             </div>
             <p class="hero-description"></p>
             <p>Feel free to connect with me🥰</p>
@@ -300,120 +307,109 @@
             <a href="#" class="social-icons" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <img src="./images/angel3.png" class="profile-image">
-
     </header>
-
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-                I am Angel Belangel, a driven aspiring software developer. I am enthusiastic about mastering the
-                intricacies of both frontend and
-                backend technologies to build robust and efficient web applications.
-            </p>
-            <p>
-                As an intern in full-stack development, I am immersed in various aspects of the software development
-                lifecycle.
-                From designing responsive user interfaces to implementing scalable backend solutions, I thrive in the
-                fast-paced environment of web development.
-            </p>
-
-        </div>
-    </section>
-
-
-    <section id="projects" class="project">
+<section id="projects" class="project">
         <h2>Projects</h2>
         <div class="project-container">
             <div class="project-item">
                 <img src="./images/movieseeker.png" class="projectimg" alt="Project 1">
                 <h3>Movie Seeker</h3>
                 <p>A movie search engine that display list of movies around the world </p>
-                <button  type="button" class="btn btn-outline-primary" onclick="window.location.href = 'https://movieseeker.vercel.app';">Click
+                <button type="button" class="btn btn-outline-primary"
+                    onclick="window.location.href = 'https://movieseeker.vercel.app';">Click
                     Here</button>
 
-                <!-- <div class="stack-used">
-          <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
-          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-        </div> -->
             </div>
-            <div class="project-item">
+<div class="project-item">
                 <img src="./images/readease.png" class="projectimg" alt="Project 2">
                 <h3>Read Ease</h3>
                 <p>Simple Project that allow to sesrch for books and read them </p>
-                <button  type="button" class="btn btn-outline-primary"
+                <button type="button" class="btn btn-outline-primary"
                     onclick="window.location.href = 'https://bookishlab-aoc7.vercel.app/';">Click Here</button>
 
-                <!-- <div class="stack-used">
-          <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
-          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-        </div> -->
             </div>
             <div class="project-item">
                 <img src="./images/more.png" class="projectimg" alt="Project 3">
                 <h3>And More</h3>
                 <p>Projects like thesis, Internship project ,etc</p>
-                <!-- <div class="stack-used">
-          <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
-          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-          <img src="https://img.icons8.com/color/48/000000/reactjs.png" alt="HTML">
-          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-        </div> -->
             </div>
         </div>
     </section>
-
-    <section id="contact" class="contact">
-        <!-- <h2>Contact Info</h2> -->
-        <!-- <div class="contact-info">
-      <p>Email: nglbelangel@gmail.com</p>
-      <p>Phone: 09506709972</p>
-      <p>Address:San Carlos City, Negros Occidental</p>
-    </div> -->
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>Owned by Angel Belangel</p>
-            <p>Contact:nglbelangel@gmail.com</p>
-            <p>Address:Brgy.Buenavista Calatrava Negros Occidental</p>
-            <p>Phone:09506709972</p>
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="abouttitle">About Me</h2>
+            <p>
+                I am passionate about developing solutions to help improve people's lives. I am interested in both frontend and backend development, but I am particularly keen on focusing on backend development.
+            </p>
         </div>
+    </section>
+    
 
-    </footer>
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        
+        <div class="skill-item">
+            <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="Typescript">
+            <h3>Typescript</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.iconscout.com/icon/free/png-512/javascript-2752148-2284965.png" alt="Javascript">
+            <h3>Javascript</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://infinapps.com/wp-content/uploads/2018/10/mongodb-logo.png" alt="MongoDB">
+            <h3>MongoDB</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" alt="NodeJS">
+            <h3>NodeJS</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/html5-10-569380.png" alt="HTML">
+            <h3>HTML</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.iconscout.com/icon/free/png-512/css3-9-1175237.png" alt="CSS">
+            <h3>CSS</h3>
+        </div>
+        
+        
+        <div class="skill-item">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/php-99-1175127.png" alt="PHP">
+            <h3>PHP</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/mysql-21-1174941.png" alt="MySQL">
+            <h3>MySQL</h3>
+        </div>
+        
+        <div class="skill-item">
+            <img src="https://iconape.com/wp-content/png_logo_vector/tailwind-css-logo.png" alt="Tailwind">
+            <h3>Tailwind</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_logo_icon_146374.png" alt="React">
+            <h3>React</h3>
+        </div>
+        <div class="skill-item">
+            <img src="https://iconape.com/wp-content/png_logo_vector/express-js-logo.png" alt="Express">
+            <h3>Express</h3>
+        </div>
+    </div>
+</section>
+<footer class="footer" style="text-align: center;">
+    <div class="footer-content">
+        <p>Owned by Angel Belangel</p>
+        <p>Contact: nglbelangel@gmail.com</p>
+        <p>Address: Brgy.Buenavista Calatrava Negros Occidental</p>
+        <p>Phone: 09506709972</p>
+    </div>
+</footer>
 
     <script>
-        function toggleNavbar() {
-            var links = document.querySelector('.navbar-links');
-            links.classList.toggle('show');
-        }
-
-        // Close navbar when clicking outside of it
-        window.onclick = function (event) {
-            var links = document.querySelector('.navbar-links');
-            if (!event.target.closest('.hamburger-menu') && !event.target.closest('.navbar-links') && links.classList.contains('show')) {
-                links.classList.remove('show');
-            }
-        };
-
-        // Close navbar when clicking on a link
-        document.querySelectorAll('.navbar-links a').forEach(item => {
-            item.addEventListener('click', () => {
-                var links = document.querySelector('.navbar-links');
-                if (links.classList.contains('show')) {
-                    links.classList.remove('show');
-                }
-            });
-        });
-
-
         const phrases = ["Freelance Developer", "Aspiring Web Developer", "Aspiring Mobile Developer"];
         let index = 0;
-
 
         function typePhrases() {
             const phraseElement = document.querySelector('.typing-animation');
@@ -450,37 +446,32 @@
         // Start typing animation
         typePhrases();
 
-
-
-    function toggleNavbar() {
-        var links = document.querySelector('.navbar-links');
-        links.classList.toggle('show');
-    }
-
-    // Close navbar when clicking outside of it
-    window.onclick = function (event) {
-        var links = document.querySelector('.navbar-links');
-        if (!event.target.closest('.hamburger-menu') && !event.target.closest('.navbar-links') && links.classList.contains('show')) {
-            links.classList.remove('show');
-        }
-    };
-
-    // Close navbar when clicking on a link
-    document.querySelectorAll('.navbar-links a').forEach(item => {
-        item.addEventListener('click', () => {
+        function toggleNavbar() {
             var links = document.querySelector('.navbar-links');
-            if (links.classList.contains('show')) {
+            links.classList.toggle('show');
+        }
+
+        // Close navbar when clicking outside of it
+        window.onclick = function (event) {
+            var links = document.querySelector('.navbar-links');
+            if (!event.target.closest('.hamburger-menu') && !event.target.closest('.navbar-links') && links.classList.contains('show')) {
                 links.classList.remove('show');
             }
+        };
+        // Close navbar when clicking on a link
+        document.querySelectorAll('.navbar-links a').forEach(item => {
+            item.addEventListener('click', () => {
+                var links = document.querySelector('.navbar-links');
+                if (links.classList.contains('show')) {
+                    links.classList.remove('show');
+                }
+            });
         });
-    });
-</script>
+
+        // Close navbar when clicking outside of it
 
 
-
-    
-
-
+    </script>
 </body>
 
-            </html>
+    </html>
