@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #FF0000; /* Red background */
+      color: white;
+      overflow-x: hidden; /* Prevent horizontal scrollbar */
+      height: 100vh; /* Ensure body occupies 100% viewport height */
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #FF0000; /* Red background */
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    /* Logo */
+    .logo {
+      margin-left: 20px;
+      max-height: 50px; /* Adjust logo height */
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+      display: none; /* Initially hide hamburger menu */
+      cursor: pointer;
+    }
+
+    /* Hero */
+    /* Hero */
+/* Hero */
+.hero {
+  background-color: #FF0000; /* Red background */
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  flex: 1;
+  text-align: center;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 50px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .hero {
+    flex-direction: column; /* Change flex direction to column for stacking items vertically */
+    text-align: center; /* Center text */
+  }
+
+  .profile-image {
+    margin-left: 0; /* Remove left margin for profile image */
+    margin-top: 20px; /* Add top margin to separate profile image from content */
+  }
+}
+
+    .social-icons {
+      font-size: 32px;
+      margin-right: 10px;
+      color: white; /* White social icons */
+    }
+
+    /* About */
+    .about {
+      background: linear-gradient(white, #FF0000); /* Gradient from white to red */
+      padding: 50px;
+    }
+
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Projects */
+    .project {
+      background-color: #FFA07A;
+      color: black;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .project-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .project-item {
+      width: 30%;
+      margin-bottom: 30px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    /* Contact */
+    .contact {
+      background-color: #FF0000; /* Red background */
+      color: white;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .contact-info {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #FF0000; /* Red background */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .social-icons {
+      font-size: 24px;
+      margin: 0 10px;
+      color: white; /* White social icons */
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 600px) {
+      .navbar {
+        justify-content: space-between;
+      }
+
+      .navbar-links {
+        display: none; /* Hide navbar links by default on small screens */
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        top: 70px; /* Adjust top position */
+        right: 20px; /* Adjust right position */
+        background-color: #FF0000; /* Red background */
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .navbar-links a {
+        margin: 5px 0; /* Adjust link spacing */
+      }
+
+      .hamburger-menu {
+        display: block; /* Display hamburger menu on small screens */
+      }
+    }
+
+/* CSS for typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap; /* Keep text in a single line */
+  margin: 0 auto; /* Center text */
+  font-size: 24px; /* Adjust font size */
+  position: relative; /* Position relative for cursor */
+}
+
+.typing-animation::after {
+  content: "|"; /* Cursor represented by pipe character */
+  position: absolute; /* Position absolute for cursor */
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { opacity: 0; } /* Make the cursor invisible at the start and end */
+  50% { opacity: 1; } /* Make the cursor visible in the middle */
+}
+
+
+   
+
+     
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="navbar-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact Info</a>
+    </div>
+    <div class="hamburger-menu" onclick="toggleNavbar()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <header id="home" class="hero">
+   
+    <div class="hero-content">
+      <h1 class="hero-name"></h1>
+     <div class="header">
+    <h1 style="text-align: center; font-size: 36px;">Hello ,Im Angel Belangel</h1>
+    <div class="typing-animation"></div>
+ 
+  </div>
+      <p class="hero-description"></p>
+      <p>Feel free to connect with me🥰</p>
+      <a href="https://www.facebook.com/angelbelangel24" class="social-icons" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/angelbelangel" class="social-icons" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/angelbelangel01" class="social-icons" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.twitter.com/angelbb" class="social-icons" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="profile-image"></div>
+  </header>
+
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus sem vitae nunc malesuada facilisis. Vestibulum ac vehicula elit. Nullam id volutpat elit.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="project">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <div class="project-item">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Movie Seeker</h3>
+        <p>A movie search engine that display list of movies around the world </p>
+        <div class="stack-used">
+          <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
+          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Read Ease</h3>
+        <p>Simple Project that allow to sesrch for books and read them </p>
+        <div class="stack-used">
+          <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
+          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="project3.jpg" alt="Project 3">
+        <h3>And More</h3>
+        <p>Projects like thesis, Internship project ,etc</p>
+        <div class="stack-used">
+          <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" alt="HTML">
+          <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+          <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Info</h2>
+    <div class="contact-info">
+      <p>Email: example@example.com</p>
+      <p>Phone: +1234567890</p>
+      <p>Address: 123 Street, City, Country</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <a href="#" class="social-icons">Facebook</a>
+    <a href="#" class="social-icons">Twitter</a>
+    <a href="#" class="social-icons">Instagram</a>
+  </footer>
+<script>
+  function toggleNavbar() {
+  var links = document.querySelector('.navbar-links');
+  links.classList.toggle('show');
+}
+
+// Close navbar when clicking outside of it
+window.onclick = function(event) {
+  var links = document.querySelector('.navbar-links');
+  if (!event.target.closest('.hamburger-menu') && !event.target.closest('.navbar-links') && links.classList.contains('show')) {
+    links.classList.remove('show');
+  }
+};
+
+// Close navbar when clicking on a link
+document.querySelectorAll('.navbar-links a').forEach(item => {
+  item.addEventListener('click', () => {
+    var links = document.querySelector('.navbar-links');
+    if (links.classList.contains('show')) {
+      links.classList.remove('show');
+    }
+  });
+});
+
+
+const phrases = ["Freelance Developer", "Mobile Developer"];
+    let index = 0;
+
+
+ function typePhrases() {
+      const phraseElement = document.querySelector('.typing-animation');
+      const currentPhrase = phrases[index];
+      const interval = 150; // Adjust typing speed
+
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        if (i <= currentPhrase.length) {
+          phraseElement.textContent = currentPhrase.substring(0, i++);
+        } else {
+          clearInterval(typingInterval);
+          setTimeout(erasePhrase, 1500); // Wait for 1.5 seconds before erasing
+        }
+      }, interval);
+    }
+
+    function erasePhrase() {
+      const phraseElement = document.querySelector('.typing-animation');
+      const currentPhrase = phrases[index];
+      const interval = 100; // Adjust erasing speed
+
+      let i = currentPhrase.length;
+      const erasingInterval = setInterval(() => {
+        if (i >= 0) {
+          phraseElement.textContent = currentPhrase.substring(0, i--);
+        } else {
+          clearInterval(erasingInterval);
+          index = (index + 1) % phrases.length;
+          setTimeout(typePhrases, 500); // Wait for 0.5 seconds before typing next phrase
+        }
+      }, interval);
+    }
+
+    // Start typing animation
+    typePhrases();
+  
+
+
+
+
+</script>
+
+  
+</body>
+</html>
+
