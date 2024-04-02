@@ -62,13 +62,10 @@
         }
 
         .profile-image {
-            width: 500px;
-            height: 500px;
-            background-color: white;
-            border-radius: 5%;
-            margin-left: 50px;
-        }
-
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5%;
+}
         /* Media query for smaller screens */
         @media screen and (max-width: 600px) {
             .hero {
@@ -117,18 +114,27 @@
         }
 
         .project-item {
-            width: 30%;
-            margin-bottom: 30px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 10px;
-        }
-
+    width: calc(30% - 20px); /* Adjust width for responsive layout */
+    margin-bottom: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative; /* Position the button relative to the project item */
+}
         .projectimg {
-            max-width: 70%;
-            min-height: 50%;
-        }
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
 
+
+.project-button {
+    position: absolute;
+    bottom: 10px; /* Adjust button position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; /* Set button width */
+    margin: 0 auto;
+}
         /* Contact */
         .contact {
             background-color: #060505;
@@ -188,6 +194,7 @@
         }
 
         /* CSS for typing animation */
+        /* CSS for typing animation */
         @keyframes typing {
             from {
                 width: 0
@@ -205,7 +212,6 @@
             font-size: 24px;
             position: relative;
         }
-
         .typing-animation::after {
             content: "|";
             position: absolute;
@@ -223,6 +229,39 @@
                 opacity: 1;
             }
         }
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding: 10px;
+    }
+    
+    .navbar a {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .logo {
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    .project-item {
+        width: 100%; /* Adjust width for smaller screens */
+    }
+
+    .projectimg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .about-content {
+        padding: 20px;
+    }
+
+    .contact-info p {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 
@@ -413,11 +452,35 @@
 
 
 
+    function toggleNavbar() {
+        var links = document.querySelector('.navbar-links');
+        links.classList.toggle('show');
+    }
+
+    // Close navbar when clicking outside of it
+    window.onclick = function (event) {
+        var links = document.querySelector('.navbar-links');
+        if (!event.target.closest('.hamburger-menu') && !event.target.closest('.navbar-links') && links.classList.contains('show')) {
+            links.classList.remove('show');
+        }
+    };
+
+    // Close navbar when clicking on a link
+    document.querySelectorAll('.navbar-links a').forEach(item => {
+        item.addEventListener('click', () => {
+            var links = document.querySelector('.navbar-links');
+            if (links.classList.contains('show')) {
+                links.classList.remove('show');
+            }
+        });
+    });
+</script>
 
 
-    </script>
+
+    
 
 
 </body>
 
-</html>
+            </html>
